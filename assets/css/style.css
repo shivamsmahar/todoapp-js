@@ -1,0 +1,227 @@
+*{
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0%;
+    padding: 0%;
+    color: aliceblue;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/003/042/243/small/abstract-blue-grunge-texture-background-free-vector.jpg);
+}
+
+
+#todo-form {
+    width: 60%;
+    border: 1px solid whitesmoke;
+    margin: 50px auto;
+    background-color: rgba(180, 255, 255, 0.088); /* translucent effect */
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 20px;
+    border-radius: 15px;
+}
+
+#heading {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+label {
+    align-self: center;
+    color: #fff;
+    font-weight: bold;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+input::placeholder {
+    color: #bbb;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#name-error {
+    grid-column: 2 / 3;
+    color: red;
+    font-size: 0.9rem;
+}
+
+#operations {
+    padding: 20px;
+    width: 60%;
+    background-color: rgba(240, 248, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+#operations > button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#operations > button:hover {
+    background-color: #0056b3;
+}
+.marked {
+    background-color: rgba(255, 0, 0, 0.3);
+    text-decoration: line-through;
+}
+#records {
+    width: 80%;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+#records table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1rem;
+}
+
+#records th, #records td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#records th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#records th:hover {
+    background-color: #555;
+}
+
+#records tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#records tr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#totals {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: auto;
+}
+/* Media Query for Tablets */
+@media screen and (max-width: 768px) {
+    #todo-form, #operations, #records, #totals {
+        width: 90%;
+    }
+
+    #todo-form {
+        grid-template-columns: 100px 1fr;
+        padding: 20px;
+    }
+
+    #operations {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #operations > button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #heading {
+        font-size: 1.5rem;
+    }
+
+    input, textarea {
+        font-size: 1rem;
+    }
+
+    #records th, #records td {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+}
+
+/* Media Query for Phones */
+@media screen and (max-width: 576px) {
+    #todo-form {
+        grid-template-columns: 1fr;
+    }
+
+    label {
+        justify-self: start;
+    }
+
+    #name-error {
+        grid-column: 1 / -1;
+    }
+
+    #heading {
+        font-size: 1.3rem;
+    }
+
+    #records th, #records td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #totals {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #heading {
+        font-size: 1.1rem;
+    }
+
+    input, textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    #operations > button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    #records th, #records td {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+}
